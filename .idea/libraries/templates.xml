@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="templates">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/Загрузки/Telegram Desktop/LiveTemplatesIntellij141218.jar!/templates" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Загрузки/Telegram Desktop/LiveTemplatesIntellij141218.jar!/templates" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/Загрузки/Telegram Desktop/LiveTemplatesIntellij141218.jar!/templates" />
+    </JAVADOC>
+    <NATIVE>
+      <root url="jar://$USER_HOME$/Загрузки/Telegram Desktop/LiveTemplatesIntellij141218.jar!/templates" />
+    </NATIVE>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Загрузки/Telegram Desktop/LiveTemplatesIntellij141218.jar!/templates" />
+    </SOURCES>
+    <jarDirectory url="jar://$USER_HOME$/Загрузки/Telegram Desktop/LiveTemplatesIntellij141218.jar!/templates" recursive="false" />
+    <jarDirectory url="jar://$USER_HOME$/Загрузки/Telegram Desktop/LiveTemplatesIntellij141218.jar!/templates" recursive="false" type="SOURCES" />
+  </library>
+</component>
