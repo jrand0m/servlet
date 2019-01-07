@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.Set;
 
 @WebServlet(value = {"/","/home","/servlet_war_exploded"}) // link variables
 public class HomeController extends HttpServlet {
@@ -31,14 +32,25 @@ public class HomeController extends HttpServlet {
         //req.setAttribute("sex", "girls");//указали атрибут прописанный в файле INDEX
         req.setAttribute("sex", sex);
         req.setAttribute("name", name);
-        List<User> users = userDAO.findAll();
-        req.setAttribute("list",users);
-        req.getRequestDispatcher("/templates/index.jsp").forward(req,resp);
+
+        requestPage(req, resp);
+
     }
+
+    private void fillInUserList(HttpServletRequest req) {
+        List<User> users = userDAO.findAll();
+        StringBuilder b = new StringBuilder();
+        for (User u : users){
+            b.append(String.format("<li> %s, %s </li>",u.getName(), u.getSex()));
+        }
+       req.setAttribute("list", b.toString());
+    }
+
     @Override
     protected void doPost(   //разобраться как работает POST
             HttpServletRequest req,
             HttpServletResponse resp) throws ServletException, IOException {
+
         System.out.println("POST");
 
 
@@ -47,15 +59,14 @@ public class HomeController extends HttpServlet {
 
         //save user into database
         userDAO.save(new User(name,sex));
-        List<User> users = userDAO.findAll();
-        req.setAttribute("list",users);
 
+        requestPage(req, resp);
+    }
 
+    private void requestPage(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        fillInUserList(req);
         req
                 .getRequestDispatcher("/templates/index.jsp")
-                .forward(req,resp);
-//        req.setAttribute("sex", sex);
-//        req.setAttribute("name", name);
-
+                .forward(req, resp);
     }
 }

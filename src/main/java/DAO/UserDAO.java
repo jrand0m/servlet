@@ -34,4 +34,10 @@ public List<User> findAll(){
     }
 
 
+    public void delete(Integer valueOf) {
+        manager.getTransaction().begin();
+        User singleResult = manager.createQuery("select u from User where u.id = " + valueOf, User.class).getSingleResult();
+        manager.remove(singleResult);
+        manager.getTransaction().commit();
+    }
 }

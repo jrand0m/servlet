@@ -20,8 +20,11 @@
 
 <input type="submit" name="" placeholder="">
 </form>
-
+<form action="/servlet_war_exploded/home" method="put">
+<ol>
 ${list}
-
+</ol>
+<!--input type='submit'/-->
+</form>
 </body>
 </html>
