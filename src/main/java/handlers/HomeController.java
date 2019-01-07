@@ -31,6 +31,8 @@ public class HomeController extends HttpServlet {
         //req.setAttribute("sex", "girls");//указали атрибут прописанный в файле INDEX
         req.setAttribute("sex", sex);
         req.setAttribute("name", name);
+        List<User> users = userDAO.findAll();
+        req.setAttribute("list",users);
         req.getRequestDispatcher("/templates/index.jsp").forward(req,resp);
     }
     @Override
